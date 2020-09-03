@@ -1,0 +1,28 @@
+{
+  "name": "cam",
+  "version": "1.0.0",
+  "description": "IP Cameras Concentrator / Viewer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "nodemon --watch ./lib --watch ./index.js --inspect=0.0.0.0:9222 --nolazy ./index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/otrojota/cam.git"
+  },
+  "author": "Jota",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/otrojota/cam/issues"
+  },
+  "homepage": "https://github.com/otrojota/cam#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "hjson": "^3.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

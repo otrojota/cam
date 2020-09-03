@@ -1,0 +1,50 @@
+
+html, body {
+    height: 100%;
+    margin:0;
+}
+.modal .modal-dialog {
+    margin-top: 0;
+}
+.card .card-header {
+    padding: 5px;
+}
+.nav-tabs .nav-item .nav-link  {
+    padding: 5px;
+}
+.home {
+    background: url(bkg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.login {
+    text-align: center;
+    color: #ffffff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+.logo-login {
+    max-width: 230px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.login h1 {
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    margin-top: 0;
+    margin-bottom: 5px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}

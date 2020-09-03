@@ -1,0 +1,16 @@
+#
+# docker stack deploy -c devel.yml cam
+#
+version: '3.6'
+services:
+  portal:
+    restart: always
+    image: node:14
+    ports:
+        - 8079:8079/tcp # Web Server
+        - 9222:9222/tcp # Debugger
+    working_dir: /usr/src/app
+    volumes:
+        - ./..:/usr/src/app
+        - .:/home/config
+    command: "npm run-script debug"

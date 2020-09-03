@@ -1,0 +1,56 @@
+{
+    # Web Server
+    webServer:{
+        http:{port:8079}
+    }
+
+    # Map
+    map: {
+        /*
+        url: "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png"
+        config:{attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'}
+        */
+        /*
+        url: 'https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}{r}.{ext}'
+        config:{
+            attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            subdomains: 'abcd'
+            ext: 'png'
+        }
+        */
+        /*
+        url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}'
+        config:{attribution: 'Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012'}
+        */
+
+        url: 'https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}{r}.png'
+        config:{attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>'}
+
+        minZoom:6
+        maxZoom:18
+    }
+
+    # Users List
+    users: [{
+        login: jota
+        pwd:   jotajota
+    }]
+
+    # Cameras
+    cameras:{
+        JC17-1:{
+            profile: escam-01
+            basePath: /data/JC17-1/cam/NGLSPP-281807-PPBGW
+            lat: -33.034515, lng: -71.591882, rotation: 240
+
+            images:{
+                dayPath: /data/JC17-1/cam/NGLSPP-281807-PPBGW/${YYYY-M-D}/picture
+                motionImage: {startsWith:"M_"}
+            }
+            videos:{
+                dayPath: /data/JC17-1/cam/NGLSPP-281807-PPBGW/${YYYY-M-D}/video
+                motionVideo: {startsWith:"M_"}
+            }
+        }
+    }
+}

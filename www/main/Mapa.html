@@ -1,0 +1,25 @@
+<div class="d-flex flex-column h-100" >
+    <div id="mapContainer" style="flex: 1 0 auto; background-color: rgba(0,0,0,0.9);"></div>
+    <div id="controls" class="bg-dark container-fluid" style="flex: 0 0 60px; ">
+        <div class="form-row">
+            <div class="col-4">
+                <input id="edDate" type="text" class="form-control form-control-sm datetimepicker text-center bg-dark" readonly style="color: white;">
+            </div>
+            <div id="lblRange" class="col-4 text-center pt-2 text-white" style="font-size: 80%;">
+                00:00 - 00:15
+            </div>
+            <div class="col-4 px-0 pt-1">
+                <div class="togglebutton">
+                    <label class="text-white">
+                      <input id="edNow" type="checkbox" checked="">
+                      <span class="toggle"></span>
+                      Ahora
+                    </label>
+                  </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div id="edHH" class="w-100"></div>
+        </div>
+    </div>
+</div>
