@@ -20,7 +20,8 @@
   "homepage": "https://github.com/otrojota/cam#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "hjson": "^3.2.1"
+    "hjson": "^3.2.1",
+    "moment-timezone": "^0.5.31"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"

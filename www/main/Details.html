@@ -1,0 +1,65 @@
+<div class="h-100 text-white p-2">
+    <div class="text-center">
+        <i id="cmdClose" class="far fa-times-circle fa-2x float-left mx-2 mt-2" style="cursor: pointer;" data-z-clickable="true"></i>
+        <div>
+            <h5 id="cameraName" class="my-0">Camera Name</h5>
+            <div id="range"></div>
+        </div>        
+    </div>
+    <hr class="border-light my-1" />
+    <div id="detailsContent" class="container-fluid">
+        <div class="row">
+            <div class="col px-0 text-left">
+                <div class="togglebutton">
+                    <label class="text-white">
+                        <input id="edScheduled" type="checkbox" checked="">
+                        <span class="toggle"></span>
+                        S/Mov. <span id="nScheduled">[0]</span>
+                    </label>
+                </div>
+                <div class="togglebutton">
+                    <label class="text-white">
+                        <input id="edMotion" type="checkbox" checked="">
+                        <span class="toggle"></span>
+                        C/Mov. <span id="nMotion">[0]</span>
+                    </label>
+                </div>
+            </div>
+            <div class="col px-0 text-right">
+                <div class="togglebutton">
+                    <label class="text-white">
+                        <input id="edImages" type="checkbox" checked="">
+                        <span class="toggle"></span>
+                        Imag. <span id="nImages">[0]</span>
+                    </label>
+                </div>
+                <div class="togglebutton">
+                    <label class="text-white">
+                        <input id="edVideos" type="checkbox" checked="">
+                        <span class="toggle"></span>
+                        Videos <span id="nVideos">[0]</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="row border rounded mt-2">
+            <div class="col-2 text-right">
+                <i id="cmdPrev" class="fas fa-chevron-left fa-2x mt-2 mr-2" style="cursor: pointer;" data-z-clickable="true"></i>
+            </div>
+            <div class="col-8 text-center">
+                <div id="imgNumber" class="text-muted" style="font-size:80%; line-height: 15px; margin-top:6px;">1/10</div>
+                <h5 id="imgTime" class="my-0">Tiempo Imagen</h5>
+                <i id="imgMotion" class="fas fa-running fa-2x ml-2 float-right" style="margin-top: -38px; color:orange;"></i>
+            </div>
+            <div class="col-2 text-left">
+                <i id="cmdNext" class="fas fa-chevron-right fa-2x mt-2 ml-2" style="cursor: pointer;" data-z-clickable="true"></i>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col px-0">
+                <img id="img" class="w-100" />
+                <div id="video"></div>
+            </div>
+        </div>
+    </div>
+</div>

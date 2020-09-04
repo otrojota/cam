@@ -217,6 +217,7 @@ class ZController {
     set html(h) {this.view.innerHTML = h} 
     enable() {this.view.disabled = false}   
     disable() {this.view.disabled = true}
+    setEnabled(e) {this.view.disableb = !e}
     isEnabled() {return this.view.disableb?false:true}
     //get pos() {let r = this.view.getBoundingClientRect(); return {left:r.left, top:r.top}}
     get pos() {return {left:parseFloat(this.view.style.left), top:parseFloat(this.view.style.top)}}

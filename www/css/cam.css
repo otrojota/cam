@@ -19,6 +19,7 @@ html, body {
     -o-background-size: cover;
     background-size: cover;
 }
+
 .login {
     text-align: center;
     color: #ffffff;
@@ -47,4 +48,11 @@ html, body {
     margin-bottom: 5px;
     padding-top: 10px;
     padding-bottom: 15px;
+}
+
+.details-pane {
+    transition: all 0.2s linear;
+}
+.details-pane-open {
+    margin-left: 10px !important;
 }

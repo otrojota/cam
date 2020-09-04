@@ -13,4 +13,6 @@ services:
     volumes:
         - ./..:/usr/src/app
         - .:/home/config
+        - /Volumes/fotos/ftp:/data
     command: "npm run-script debug"
+    #command: "npm run-script start"

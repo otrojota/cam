@@ -1,6 +1,13 @@
 <div class="d-flex flex-column h-100" >
-    <div id="mapContainer" style="flex: 1 0 auto; background-color: rgba(0,0,0,0.9);"></div>
-    <div id="controls" class="bg-dark container-fluid" style="flex: 0 0 60px; ">
+    <div class="d-flex flex-column" style="flex: 1 0 auto; background-color: rgba(0,0,0,0.9);">
+        <div id="mapContainer" class="w-100 h-100" style="flex: 1 1 100%;"></div>
+        <div id="working" class="text-center" style="position:absolute; left: 0; top:0; right:0; bottom:0;  background-color: rgba(0,0,0,0.5); color:white; z-index: 500;">
+            <i class="fas fa fa-spin fa-spinner fa-2x" style="margin-top: 100px;"></i>
+        </div>
+        <div id="details" class="details-pane rounded border my-3 bg-dark" style="position:absolute; left:0; top:0; right:0; bottom:20px; margin-left:100%; z-index: 1000;" data-z-component="./Details">            
+        </div>
+    </div>
+    <div id="controls" class="bg-dark container-fluid" style="flex: 0 0 60px; z-index: 600;">
         <div class="form-row">
             <div class="col-4">
                 <input id="edDate" type="text" class="form-control form-control-sm datetimepicker text-center bg-dark" readonly style="color: white;">
@@ -11,15 +18,15 @@
             <div class="col-4 px-0 pt-1">
                 <div class="togglebutton">
                     <label class="text-white">
-                      <input id="edNow" type="checkbox" checked="">
-                      <span class="toggle"></span>
-                      Ahora
+                        <input id="edNow" type="checkbox" checked="">
+                        <span class="toggle"></span>
+                        Ahora
                     </label>
-                  </div>
+                </div>
             </div>
         </div>
         <div class="form-row">
-            <div id="edHH" class="w-100"></div>
+            <div id="edHH" class="w-100" style="transform: scale(1.5); margin-left:20%; margin-right: 20%;"></div>
         </div>
     </div>
 </div>

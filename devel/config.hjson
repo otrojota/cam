@@ -4,6 +4,8 @@
         http:{port:8079}
     }
 
+    timeZone:"America/Santiago"
+
     # Map
     map: {
         /*
@@ -41,16 +43,7 @@
         JC17-1:{
             profile: escam-01
             basePath: /data/JC17-1/cam/NGLSPP-281807-PPBGW
-            lat: -33.034515, lng: -71.591882, rotation: 240
-
-            images:{
-                dayPath: /data/JC17-1/cam/NGLSPP-281807-PPBGW/${YYYY-M-D}/picture
-                motionImage: {startsWith:"M_"}
-            }
-            videos:{
-                dayPath: /data/JC17-1/cam/NGLSPP-281807-PPBGW/${YYYY-M-D}/video
-                motionVideo: {startsWith:"M_"}
-            }
+            lat: -33.034547, lng: -71.591892, rotation: 260
         }
     }
 }

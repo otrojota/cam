@@ -20,7 +20,8 @@ async function createHTTPServer() {
             next();
         });
         
-        app.post("/*.*", (req, res) => zServer.resolve(req, res));        
+        app.post("/*.*", (req, res) => zServer.resolve(req, res));     
+        cams.getCameras().forEach(cam => cam.registerRoutes(app))
 
         if (config.webServer.http) {
             var port = config.webServer.http.port;
