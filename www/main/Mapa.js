@@ -19,7 +19,7 @@ class Mapa extends ZCustomController {
         this.konvaLeafletLayer.getVisualizer("cameras").setCameras(this.cameras);
         
         this.slider = noUiSlider.create(this.edHH.view, {
-            start:0, range:{min:0, max:24*60/15 - 1}
+            start:0, range:{min:0, max:24 * 2 - 1}
         });
         this.slider.on("slide", e => this.mmChanged(e));
         $(this.view).bootstrapMaterialDesign();
@@ -50,7 +50,7 @@ class Mapa extends ZCustomController {
         let startOfDay = now.clone().startOf("day");
         this.edDate.value = startOfDay;        
         let minutes = moment.duration(now.diff(startOfDay)).asMinutes();
-        this.slider.set(minutes / 15);
+        this.slider.set(minutes / 30);
     }
 
     onEdNow_change() {
@@ -72,14 +72,14 @@ class Mapa extends ZCustomController {
         let t0, t1;
         if (this.isNow()) {
             let now = moment.tz(moment.tz.guess());
-            let nowMinus15 = now.clone().subtract(15, "minutes");
-            this.lblRange.text = nowMinus15.format("HH:mm") + " - " + now.format("HH:mm");
-            t0 = nowMinus15;
+            let nowMinus30 = now.clone().subtract(30, "minutes");
+            this.lblRange.text = nowMinus30.format("HH:mm") + " - " + now.format("HH:mm");
+            t0 = nowMinus30;
             t1 = now;
         } else {
-            let mm0 = 15 * parseInt(this.slider.get())
-            t0 = this.getDate().startOf("day").add(mm0, "minutes");
-            t1 = t0.clone().add(15, "minutes");
+            let mm0 = parseInt(this.slider.get());
+            t0 = this.getDate().startOf("day").add(mm0 * 30, "minutes");
+            t1 = t0.clone().add(30, "minutes");
         }
         this.lblRange.text = t0.format("HH:mm") + " - " + t1.format("HH:mm");
         this.callGetResume(t0, t1);
@@ -97,10 +97,6 @@ class Mapa extends ZCustomController {
         zPost("getEventsResume.cam", {fromTime:t0.valueOf(), toTime:t1.valueOf()}, resume => {
             this.konvaLeafletLayer.getVisualizer("cameras").setResume(resume);
             this.hideWorking();
-            if (this.detailsOpen) {
-                let cameraResume = resume[this.details.resume.cameraCode];
-                this.details.refresh(cameraResume);
-            }
         }, error => {
             console.error(error)
             this.hideWorking();
@@ -109,11 +105,16 @@ class Mapa extends ZCustomController {
 
     openDetails(cameraResume) {
         this.details.refresh(cameraResume);
-        this.details.addClass("details-pane-open");
+        let w = this.view.offsetWidth;
+        if (w < 400) this.details.addClass("details-pane-open");
+        else if (w < 800) this.details.addClass("details-pane-open-half");
+        else this.details.addClass("details-pane-open-wide");
         this.detailsOpen = true;
     }
     onDetails_close() {
         this.details.removeClass("details-pane-open");
+        this.details.removeClass("details-pane-open-half");
+        this.details.removeClass("details-pane-open-wide");
         this.detailsOpen = false;
     }
 }

@@ -1,0 +1,19 @@
+#
+# docker stack deploy -c prod.yml cam
+#
+version: '3.6'
+services:
+  portal:
+    restart: always
+    image: otrojota/cam
+    ports:
+        - 8079:8079/tcp # Web Server
+    volumes:
+        - ./config:/home/config
+        - /mnt/fotos/ftp:/data
+    networks:
+        - homejota
+          
+networks:
+  homejota:
+    external: true

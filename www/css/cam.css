@@ -2,6 +2,7 @@
 html, body {
     height: 100%;
     margin:0;
+    overflow:hidden;
 }
 .modal .modal-dialog {
     margin-top: 0;
@@ -55,4 +56,12 @@ html, body {
 }
 .details-pane-open {
     margin-left: 10px !important;
+}
+
+.details-pane-open-half {
+    margin-left: 30% !important;
+}
+
+.details-pane-open-wide {
+    margin-left: 60% !important;
 }

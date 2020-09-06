@@ -5,7 +5,7 @@ version: '3.6'
 services:
   portal:
     restart: always
-    image: node:14
+    image: docker.homejota.net/node14-ffmpeg
     ports:
         - 8079:8079/tcp # Web Server
         - 9222:9222/tcp # Debugger
